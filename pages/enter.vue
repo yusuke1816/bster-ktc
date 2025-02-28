@@ -27,55 +27,55 @@
   </div>
 </template>
 
-<script>import emailjs from 'emailjs-com';
+<script setup>
+import { ref } from 'vue';
+import emailjs from 'emailjs-com';
+import { useRouter } from 'vue-router'; // useRouter フックをインポート
 
-export default {
-  name: 'ContactPage',
-  layout: 'default',
-  data() {
-    return {
-      form: {
-        name: '',
-        email: '',
-        message: ''
-      }
-    };
-  },
-  methods: {
-    async handleSubmit() {
-      const formData = {
-        name: this.form.name,
-        email: this.form.email,
-        message: this.form.message
-      };
+// フォームのデータ
+const form = ref({
+  name: '',
+  email: '',
+  message: ''
+});
 
-      try {
-        // EmailJS を使ってメール送信
-        const response = await emailjs.send(
-          'service_49jrbwf',    // サービスID（Gmailなどの設定時に作成したもの）
-          'template_yxrt96p',   // 作成したテンプレートID
-          formData,             // フォームのデータ
-          'R_fswn6SpvTPknVa6'     // EmailJSのパブリックキー
-        );
+// useRouter を使用して、ページ遷移を行う
+const router = useRouter();
 
-        if (response.status === 200) {
-          alert('お問い合わせありがとうございました！');
+const handleSubmit = async () => {
+  const formData = {
+    name: form.value.name,
+    email: form.value.email,
+    message: form.value.message
+  };
 
-          // フォームをリセット
-          this.form.name = '';
-          this.form.email = '';
-          this.form.message = '';
-        } else {
-          alert('メール送信に失敗しました。再試行してください。');
-        }
-      } catch (error) {
-        console.error('エラー:', error);
-        alert('メール送信に失敗しました。再試行してください。');
-      }
+  try {
+    // EmailJS を使ってメール送信
+    const response = await emailjs.send(
+      'service_49jrbwf',    // サービスID（Gmailなどの設定時に作成したもの）
+      'template_yxrt96p',   // 作成したテンプレートID
+      formData,             // フォームのデータ
+      'R_fswn6SpvTPknVa6'     // EmailJSのパブリックキー
+    );
+
+    if (response.status === 200) {
+      alert('お問い合わせありがとうございました！');
+
+      // フォームをリセット
+      form.value.name = '';
+      form.value.email = '';
+      form.value.message = '';
+
+      // フォーム送信後にページ遷移
+      router.push({ name: 'thankyou' }); // 'thankyou' は遷移先のページ名（ルート名）
+    } else {
+      alert('メール送信に失敗しました。再試行してください。');
     }
+  } catch (error) {
+    console.error('エラー:', error);
+    alert('メール送信に失敗しました。再試行してください。');
   }
 };
-
 </script>
 
 <style scoped>
@@ -102,10 +102,7 @@ ul {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
 }
-
-
 
 h2 {
   font-size: 2.5em;
@@ -168,7 +165,8 @@ button.submit-btn {
 button.submit-btn:hover {
   background-color: #e91effb4;
 }
-.container{
+
+.container {
   position: absolute; /* Overlay it over the app */
   top: 0;
   left: 0;
@@ -180,8 +178,8 @@ button.submit-btn:hover {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start; /* Align content to the top */
-  padding: 20px;}
-
+  padding: 20px;
+}
 
 /* スマホ対応（レスポンシブ） */
 @media (max-width: 768px) {

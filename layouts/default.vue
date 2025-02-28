@@ -92,15 +92,7 @@ h1 {
 
 
 
-h2 {
-  font-family: 'M PLUS 1p', sans-serif; /* フォントをM PLUS 1pに設定 */
-  color: #000; /* テキストカラーを黒に設定 */
-  text-shadow:
-    1px 1px 0 #fff,   /* 右上の影 */
-    -1px -1px 0 #fff, /* 左下の影 */
-    1px -1px 0 #fff,  /* 左上の影 */
-    -1px 1px 0 #fff;  /* 右下の影 */
-}
+
 </style>
 
 

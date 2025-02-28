@@ -249,7 +249,9 @@ box-shadow: 0 60px 120px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
   text-align: center; /* ボタンを中央揃え */
   margin-top: 20px; /* 上にスペースを追加 */
 }
-
+.title{
+  color: #ffffff;
+}
 @media (max-width: 768px) {
     .news-item {
       width: 100%;
