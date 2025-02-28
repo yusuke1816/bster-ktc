@@ -1,5 +1,7 @@
 <template>
-  <div v-if="member" class="member-container">
+  <div id="app">
+    <div class="container">
+    <div v-if="member" class="member-container">
     <div class="member-image">
       <img :src="member.image" alt="{{ member.name }}の画像" class="member-img">
     </div>
@@ -35,6 +37,10 @@
       <button class="center-button">一覧へ</button>
     </nuxt-link>
   </div>
+  </div>
+  </div>
+
+
 </template>
 <script setup>
 
@@ -68,6 +74,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
 }
+
 
 h1{
 
