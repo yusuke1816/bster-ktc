@@ -115,9 +115,7 @@ position: absolute;
   margin-bottom: 20px;
   z-index: 2; /* Ensure it sits above the container */
 }
-.news-detail{
 
-}
 /* Additional media query styles */
 @media (max-width: 768px) {
   .container {

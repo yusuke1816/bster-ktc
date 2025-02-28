@@ -148,9 +148,6 @@ h2 {
   grid-template-columns: repeat(4, 1fr); /* 3列に設定 */
 }
 
-.enter-button-a{
-
-}
 
 .enter-button{
   background-color: #e91eff;
