@@ -15,7 +15,7 @@
    <img src='/assets/b-iconn.png' alt="aaa">
    <div class="enter-button-a">
     <nuxt-link to="/enter" active-class="active">
-      <button class="enter-button">入隊申</button>
+      <button class="enter-button">入隊申請</button>
     </nuxt-link>
 
 
