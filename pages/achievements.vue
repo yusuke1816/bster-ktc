@@ -1,25 +1,28 @@
 <template>
     <div id="app">
-      <h2 class="page-title">活動</h2>
+      <div class="container">
+        <h2 class="page-title">活動</h2>
 
-      <!-- ニュースリスト部分 -->
+<!-- ニュースリスト部分 -->
 
-      <ul v-if="!selectedNewsItem" class="news-list">
-        <li v-for="newsItem in news" :key="newsItem.id" class="news-item" @click="showDetails(newsItem)">
-         <!--<h2 class="news-title">{{ newsItem.title }}</h2>
-          <small class="news-date">{{ newsItem.date }}</small>-->
-          <img :src="newsItem.image?.url" alt="" class="news-image" v-if="newsItem.image" />
-        </li>
-      </ul>
+<ul v-if="!selectedNewsItem" class="news-list">
+  <li v-for="newsItem in news" :key="newsItem.id" class="news-item" @click="showDetails(newsItem)">
+   <!--<h2 class="news-title">{{ newsItem.title }}</h2>
+    <small class="news-date">{{ newsItem.date }}</small>-->
+    <img :src="newsItem.image?.url" alt="" class="news-image" v-if="newsItem.image" />
+  </li>
+</ul>
 
-      <!-- 詳細表示部分 -->
-      <div v-if="selectedNewsItem" class="news-detail">
-        <h2 class="news-title">{{ selectedNewsItem.title }}</h2>
-        <p class="news-description">{{ selectedNewsItem.content }}</p>
-        <small class="news-date">{{ selectedNewsItem.date }}</small>
-        <img :src="selectedNewsItem.image?.url" alt="" class="news-image" v-if="selectedNewsItem.image" />
-        <button @click="closeDetails">Close</button>
+<!-- 詳細表示部分 -->
+<div v-if="selectedNewsItem" class="news-detail">
+  <h2 class="news-title">{{ selectedNewsItem.title }}</h2>
+  <p class="news-description">{{ selectedNewsItem.content }}</p>
+  <small class="news-date">{{ selectedNewsItem.date }}</small>
+  <img :src="selectedNewsItem.image?.url" alt="" class="news-image" v-if="selectedNewsItem.image" />
+  <button @click="closeDetails">Close</button>
+</div>
       </div>
+
     </div>
   </template>
   <script setup>
@@ -152,6 +155,9 @@
     background-color: #e91eff;
   }
 /* スマホ向けの更にコンパクトなCSS調整 */
+.container{
+  background-color: rgba(51, 51, 51, 0.384);
+}
 
 @media (max-width: 768px) {
   /* ニュースアイテム */

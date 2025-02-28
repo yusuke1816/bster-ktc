@@ -1,29 +1,34 @@
 <template>
+
   <div id="app">
-    <!-- ヘッダー -->
-    <h2>お問い合わせ</h2>
+    <div class="container">
+ <!-- ヘッダー -->
+ <h2>お問い合わせ</h2>
 
-    <!-- お問い合わせフォーム -->
-    <section id="contact" class="contact">
-      <form @submit.prevent="handleSubmit" class="contact-form">
-        <div class="form-group">
-          <label for="name">お名前</label>
-          <input type="text" id="name" v-model="form.name" required placeholder="お名前を入力してください" />
-        </div>
+<!-- お問い合わせフォーム -->
+<section id="contact" class="contact">
+  <form @submit.prevent="handleSubmit" class="contact-form">
+    <div class="form-group">
+      <label for="name">お名前</label>
+      <input type="text" id="name" v-model="form.name" required placeholder="お名前を入力してください" />
+    </div>
 
-        <div class="form-group">
-          <label for="email">メールアドレス</label>
-          <input type="email" id="email" v-model="form.email" required placeholder="メールアドレスを入力してください" />
-        </div>
+    <div class="form-group">
+      <label for="email">メールアドレス</label>
+      <input type="email" id="email" v-model="form.email" required placeholder="メールアドレスを入力してください" />
+    </div>
 
-        <div class="form-group">
-          <label for="message">お問い合わせ内容</label>
-          <textarea id="message" v-model="form.message" required placeholder="お問い合わせ内容を入力してください"></textarea>
-        </div>
+    <div class="form-group">
+      <label for="message">お問い合わせ内容</label>
+      <textarea id="message" v-model="form.message" required placeholder="お問い合わせ内容を入力してください"></textarea>
+    </div>
 
-        <button type="submit" class="submit-btn">送信する</button>
-      </form>
-    </section>
+    <button type="submit" class="submit-btn">送信する</button>
+  </form>
+</section>
+    </div>
+
+
   </div>
 </template>
 
@@ -80,19 +85,10 @@ ul {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+
 }
 
-#app::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-}
+
 
 h2 {
   font-size: 2.5em;
@@ -137,6 +133,7 @@ input, textarea {
 
 textarea {
   min-height: 150px;
+  min-width: 500px;
   resize: vertical;
 }
 
@@ -154,6 +151,16 @@ button.submit-btn {
 button.submit-btn:hover {
   background-color: #e91effb4;
 }
+.container {
+  background-color: rgba(51, 51, 51, 0.384);
+  height: 100vh; /* Ensures full viewport height */
+  width: 100%;
+  display: flex; /* Centers content */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  flex-direction: column; /* Ensures the content stacks vertically */
+}
+
 
 /* スマホ対応（レスポンシブ） */
 @media (max-width: 768px) {

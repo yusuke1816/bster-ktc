@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h2>メンバー紹介</h2>
+    <div class="container">
+      <h2>メンバー紹介</h2>
     <section id="members" class="members">
       <ul>
         <li v-for="member in news" :key="member.id" class="member-card">
@@ -13,6 +14,8 @@
         </li>
       </ul>
     </section>
+    </div>
+
   </div>
 </template>
 
@@ -59,6 +62,10 @@ h2 {
 h3{
   color: white;
 }
+.container{
+  background-color: rgba(51, 51, 51, 0.384);
+}
+
 
 .members {
   padding: 40px 20px;

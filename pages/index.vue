@@ -1,15 +1,32 @@
-<template>
+<template class="main">
   <div id="app">
     <!-- ヘッダー -->
 
-
-    <!-- メインコンテンツ -->
-    <section id="about" class="about">
+<div class="container">
+ <!-- メインコンテンツ -->
+ <section id="about" class="about">
       <h2 class="title">チーム紹介</h2>
+      <p>
+        私たちはブロスタサークルです！！<br>ブロスタサークルは様々な専攻で構成されています
+        学年専攻問わず大歓迎です！！<br>
+        ブロスタに熱意のある方はぜひ一度下記ボタンから申請をして仮入隊してください！！
+      </p>
+
+   <img src='/assets/b-iconn.png' alt="aaa">
+   <div class="enter-button-a">
+    <a  href="">
+    <button class="enter-button">入隊申請</button>
+    </a>
+  </div>
+
+    </section>
+
+    <section id="" class="">
+      <h2 class="title">ブロスタとは？</h2>
       <p>
         私たちのチームは、最高のプレイヤーが集まった精鋭集団です。どんな戦いでも勝利を目指します。
       </p>
-      <p>ブロスタ</p>
+
    <img src='/assets/b-iconn.png' alt="aaa">
     </section>
 
@@ -17,6 +34,8 @@
     <h2  class="store-h2"> Store</h2>
     <a id="store" class="store-tag" href="https://brosterclub.base.shop/"><img class="store-img" src="/assets/store.jpeg" alt=""></a>
   </section>
+
+</div>
 
   </div>
 </template>
@@ -63,6 +82,10 @@ ul {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+}
+.container{
+  background-color: rgba(51, 51, 51, 0.384);
 }
 
 h2 {
@@ -76,6 +99,9 @@ h2 {
 .members {
   padding: 40px 20px;
   text-align: center;
+
+}
+.about{
 
 }
 
@@ -92,6 +118,17 @@ h2 {
   text-align: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 3列に設定 */
+}
+
+.enter-button-a{
+
+}
+
+.enter-button{
+  background-color: #e91eff;
+  color: #fff;
+  display: block;
+  margin: auto;
 }
 
 .store-h2 {
