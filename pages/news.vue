@@ -93,6 +93,7 @@ const {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 600px;
     margin: 10px auto; /* 中央配置 */
+    margin-bottom: 20px;
   }
 
   .news-item:hover {

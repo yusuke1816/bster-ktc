@@ -21,13 +21,15 @@
 
     </section>
 
-    <section id="" class="">
+    <section id="" class="aaa">
       <h2 class="title">ブロスタとは？</h2>
       <p>
-        私たちのチームは、最高のプレイヤーが集まった精鋭集団です。どんな戦いでも勝利を目指します。
+        『ブロスタ』は、多彩なキャラクターを使い、バトルを繰り広げるゲームです。<br>ソロやチーム(最大5人)で戦うことができ、「バトルロイヤル（ソロ デュオ トリオ）」「サッカー」「エメラルドハント」「ホットゾーン」<br>など全部で８種類のモード（ランク戦やルームモードも）。キャラクターを育て、スキルを駆使して勝利を目指します。
       </p>
+      <video class="cropped-video" controls>
+  <source src="public/assets/play.mp4" type="video/mp4">
+</video>
 
-   <img src='/assets/b-iconn.png' alt="aaa">
     </section>
 
   <section  class="store">
@@ -101,9 +103,18 @@ h2 {
   text-align: center;
 
 }
-.about{
-
+.aaa{
+  padding: 40px 20px;
+  text-align: center;
 }
+
+.cropped-video {
+  width: 50rem; /* Adjust the width of the video */
+  height: 100%; /* Adjust the height of the video */
+  object-fit: cover; /* Ensures the video covers the container area */
+  clip-path: inset(30px 0 30px 0); /* Move the video up by 50px */
+}
+
 
 .member-card {
   display: inline-block;

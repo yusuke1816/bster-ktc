@@ -134,7 +134,7 @@ a {
 
   p{
     color: white;
-    font-size: small;
+
   }
 
 a {

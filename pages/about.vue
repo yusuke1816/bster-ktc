@@ -8,7 +8,7 @@
           <nuxt-link :to="`/member/${member.id}`">
             <img :src="member.image?.url" alt="" class="member-img" v-if="member.image" />
             <h3 class="news-title">{{ member.name }}</h3>
-            <p>専攻: {{ member.subject }}</p>
+            <p class="subject">専攻: {{ member.subject }}</p>
             <p>学年: {{ member.grade }}</p>
           </nuxt-link>
         </li>
@@ -65,6 +65,12 @@ h3{
 .container{
   background-color: rgba(51, 51, 51, 0.384);
 }
+
+.subject{
+  font-size: small;
+}
+
+
 
 
 .members {

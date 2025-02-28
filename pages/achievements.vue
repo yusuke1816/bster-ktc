@@ -157,6 +157,8 @@
 /* スマホ向けの更にコンパクトなCSS調整 */
 .container{
   background-color: rgba(51, 51, 51, 0.384);
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 768px) {
