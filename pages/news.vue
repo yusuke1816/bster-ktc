@@ -72,7 +72,7 @@ position: absolute;
   color: white;
   font-family: 'Arial', sans-serif;
   margin: 0;
-  height: 150vh; /* min-height から height に変更 */
+  height: 300vh; /* min-height から height に変更 */
   display: flex;
   flex-direction: column;
   align-items: center;

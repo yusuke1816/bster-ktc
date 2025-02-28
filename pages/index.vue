@@ -14,9 +14,11 @@
 
    <img src='/assets/b-iconn.png' alt="aaa">
    <div class="enter-button-a">
-    <a  href="">
-    <button class="enter-button">入隊申請</button>
-    </a>
+    <nuxt-link to="/enter" active-class="active">
+      <button class="enter-button">入隊申請</button>
+    </nuxt-link>
+
+
   </div>
 
     </section>
@@ -97,7 +99,7 @@ position: absolute;
   color: white;
   font-family: 'Arial', sans-serif;
   margin: 0;
-  height: 240vh; /* min-height から height に変更 */
+  height: 300vh; /* min-height から height に変更 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,6 +225,33 @@ box-shadow: 0 60px 120px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
   transform: scale(1.1);
 }
 
+
+.enter-button {
+  background-color: #e91eff; /* 指定された色 */
+  color: white; /* 白文字 */
+  padding: 15px 32px; /* 上下の余白と左右の余白 */
+  text-align: center; /* 文字を中央揃え */
+  text-decoration: none; /* 下線を消す */
+  display: inline-block; /* ボタンをインラインで表示 */
+  font-size: 16px; /* フォントサイズ */
+  border: none; /* ボーダーを削除 */
+  border-radius: 8px; /* 角を丸くする */
+  cursor: pointer; /* マウスカーソルを指に変える */
+  transition: background-color 0.3s ease; /* ホバー時の背景色変更をスムーズに */
+}
+
+.enter-button:hover {
+  background-color: #d500f9; /* ホバー時に少し暗く */
+}
+
+.enter-button:active {
+  background-color: #aa00d6; /* クリック時にさらに暗く */
+}
+
+.enter-button-a {
+  text-align: center; /* ボタンを中央揃え */
+  margin-top: 20px; /* 上にスペースを追加 */
+}
 
 @media (max-width: 768px) {
     .news-item {

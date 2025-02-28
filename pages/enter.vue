@@ -1,38 +1,34 @@
 <template>
-
   <div id="app">
     <div class="container">
- <!-- ヘッダー -->
- <h2>お問い合わせ</h2>
+      <h2>仮入隊申請</h2>
 
-<!-- お問い合わせフォーム -->
-<section id="contact" class="contact">
-  <form @submit.prevent="handleSubmit" class="contact-form">
-    <div class="form-group">
-      <label for="name">お名前</label>
-      <input type="text" id="name" v-model="form.name" required placeholder="お名前を入力してください" />
+      <section id="contact" class="contact">
+        <form @submit.prevent="handleSubmit" class="contact-form">
+          <div class="form-group">
+            <label for="name">お名前</label>
+            <input type="text" id="name" v-model="form.name" required placeholder="山田太郎：スーパーITエンジニア専攻・学年" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" v-model="form.email" required placeholder="メールアドレス" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">詳細</label>
+            <textarea id="message" v-model="form.message" required placeholder="総合トロ〇〇 決意・目標"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">送信する</button>
+        </form>
+      </section>
     </div>
-
-    <div class="form-group">
-      <label for="email">メールアドレス</label>
-      <input type="email" id="email" v-model="form.email" required placeholder="メールアドレスを入力してください" />
-    </div>
-
-    <div class="form-group">
-      <label for="message">お問い合わせ内容</label>
-      <textarea id="message" v-model="form.message" required placeholder="お問い合わせ内容を入力してください"></textarea>
-    </div>
-
-    <button type="submit" class="submit-btn">送信する</button>
-  </form>
-</section>
-    </div>
-
-
   </div>
 </template>
 
-<script>
+<script>import emailjs from 'emailjs-com';
+
 export default {
   name: 'ContactPage',
   layout: 'default',
@@ -43,22 +39,43 @@ export default {
         email: '',
         message: ''
       }
-    }
+    };
   },
   methods: {
-    handleSubmit() {
-      // ここでフォームの送信処理を行います。例えばAPIの呼び出しなど。
-      console.log("送信された内容:", this.form);
+    async handleSubmit() {
+      const formData = {
+        name: this.form.name,
+        email: this.form.email,
+        message: this.form.message
+      };
 
-      // フォームをリセットする
-      this.form.name = '';
-      this.form.email = '';
-      this.form.message = '';
+      try {
+        // EmailJS を使ってメール送信
+        const response = await emailjs.send(
+          'service_49jrbwf',    // サービスID（Gmailなどの設定時に作成したもの）
+          'template_yxrt96p',   // 作成したテンプレートID
+          formData,             // フォームのデータ
+          'R_fswn6SpvTPknVa6'     // EmailJSのパブリックキー
+        );
 
-      alert('お問い合わせありがとうございました！');
+        if (response.status === 200) {
+          alert('お問い合わせありがとうございました！');
+
+          // フォームをリセット
+          this.form.name = '';
+          this.form.email = '';
+          this.form.message = '';
+        } else {
+          alert('メール送信に失敗しました。再試行してください。');
+        }
+      } catch (error) {
+        console.error('エラー:', error);
+        alert('メール送信に失敗しました。再試行してください。');
+      }
     }
   }
-}
+};
+
 </script>
 
 <style scoped>
@@ -151,15 +168,19 @@ button.submit-btn {
 button.submit-btn:hover {
   background-color: #e91effb4;
 }
-.container {
-  background-color: rgba(51, 51, 51, 0.384);
-  height: 100vh; /* Ensures full viewport height */
+.container{
+  position: absolute; /* Overlay it over the app */
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex; /* Centers content */
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  flex-direction: column; /* Ensures the content stacks vertically */
-}
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.384); /* Semi-transparent background */
+  z-index: 1; /* Ensure the container sits above the background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  padding: 20px;}
 
 
 /* スマホ対応（レスポンシブ） */

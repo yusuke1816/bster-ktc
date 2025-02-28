@@ -73,6 +73,7 @@ onMounted(() => {
   min-height: 100vh; /* 画面の高さに合わせる */
   display: flex;
   flex-direction: column;
+  height: 300vh; /* min-height から height に変更 */
 }
 
 
