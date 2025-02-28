@@ -151,19 +151,15 @@ button.submit-btn {
 button.submit-btn:hover {
   background-color: #e91effb4;
 }
-.container{
-  position: absolute; /* Overlay it over the app */
-  top: 0;
-  left: 0;
+.container {
+  background-color: rgba(51, 51, 51, 0.384);
+  height: 100vh; /* Ensures full viewport height */
   width: 100%;
-  height: 100%;
-  background-color: rgba(51, 51, 51, 0.384); /* Semi-transparent background */
-  z-index: 1; /* Ensure the container sits above the background */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* Align content to the top */
-  padding: 20px;}
+  display: flex; /* Centers content */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  flex-direction: column; /* Ensures the content stacks vertically */
+}
 
 
 /* スマホ対応（レスポンシブ） */

@@ -73,21 +73,36 @@ ul {
   padding: 0;
 }
 
+.container {
+position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* 高さを100%に指定 */
+  background-color: rgba(51, 51, 51, 0.384);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  z-index: 1;
+}
+
+/* Adjustments for the existing elements */
 #app {
-  background-image: url('/assets/back.jpg'); /* パブリックアセットフォルダを使用 */
+  background-image: url('/assets/back.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: white;
   font-family: 'Arial', sans-serif;
   margin: 0;
-  min-height: 100vh;
+  height: 240vh; /* min-height から height に変更 */
   display: flex;
   flex-direction: column;
-
-}
-.container{
-  background-color: rgba(51, 51, 51, 0.384);
+  align-items: center;
+  position: relative; /* Positionをrelativeに変更 */
+  z-index: 0; /* 必要に応じて調整 */
 }
 
 h2 {
@@ -144,7 +159,7 @@ h2 {
 
 .store-h2 {
  margin-bottom: 1rem;
- margin-top: 5rem;
+ margin-top: 14rem;
 }
 .store-tag {
   text-align: center;

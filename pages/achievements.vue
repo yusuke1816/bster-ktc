@@ -155,10 +155,19 @@
     background-color: #e91eff;
   }
 /* スマホ向けの更にコンパクトなCSS調整 */
-.container{
-  background-color: rgba(51, 51, 51, 0.384);
+.container {
+position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; /* 高さを100%に指定 */
+  background-color: rgba(51, 51, 51, 0.384);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
