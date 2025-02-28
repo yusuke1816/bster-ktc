@@ -9,6 +9,7 @@
       <p>
         私たちのチームは、最高のプレイヤーが集まった精鋭集団です。どんな戦いでも勝利を目指します。
       </p>
+      <p>ブロスタ</p>
    <img src='/assets/b-iconn.png' alt="aaa">
     </section>
 
